@@ -55,7 +55,6 @@
       justify-content: space-between;
       padding: 1.5rem 4rem;
       background: linear-gradient(to bottom, rgba(10,9,8,0.95) 0%, transparent 100%);
-      backdrop-filter: blur(0px);
     }
 
     .nav-logo {
@@ -186,7 +185,6 @@
     }
 
     .btn-ghost:hover { color: var(--gold); }
-
     .btn-ghost svg { transition: transform 0.3s ease; }
     .btn-ghost:hover svg { transform: translateX(4px); }
 
@@ -201,36 +199,13 @@
       animation: fadeIn 1s ease 1.2s forwards;
     }
 
-    .scroll-line {
-      width: 40px;
-      height: 1px;
-      background: var(--gold-dim);
-    }
+    .scroll-line { width: 40px; height: 1px; background: var(--gold-dim); }
 
     .scroll-text {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-dim);
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 4rem;
-      margin: 0 0 6rem;
-    }
-
-    .divider-line { flex: 1; height: 1px; background: var(--border); }
-
-    .divider-text {
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      white-space: nowrap;
     }
 
     /* ── SECTION ── */
@@ -322,7 +297,6 @@
       align-items: flex-start;
       justify-content: space-between;
       padding: 2.5rem 3rem;
-      cursor: pointer;
     }
 
     .project-meta {
@@ -330,6 +304,7 @@
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 0.75rem;
+      flex-wrap: wrap;
     }
 
     .project-num {
@@ -402,8 +377,13 @@
       font-size: 0.95rem;
       line-height: 1.8;
       color: var(--text-muted);
-      max-width: 600px;
+      max-width: 640px;
       padding: 2rem 0 2.5rem;
+    }
+
+    .project-description strong {
+      color: var(--text);
+      font-weight: 400;
     }
 
     /* ── VIDEO EMBED ── */
@@ -475,10 +455,21 @@
       padding: 0.3rem 0.8rem;
     }
 
-    /* ── CONTACT ── */
-    .contact-inner {
-      max-width: 700px;
+    /* ── NO AUDIO BADGE ── */
+    .no-audio-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border: 1px solid var(--text-dim);
+      padding: 0.2rem 0.6rem;
     }
+
+    /* ── CONTACT ── */
+    .contact-inner { max-width: 700px; }
 
     .contact-intro {
       font-size: 1rem;
@@ -500,7 +491,6 @@
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
       text-decoration: none;
-      group: true;
       transition: padding-left 0.3s ease;
     }
 
@@ -582,7 +572,6 @@
       .nav-links { display: none; }
       .hero { padding: 0 1.5rem; }
       section { padding: 5rem 1.5rem; }
-      .divider { padding: 0 1.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .project-header { padding: 1.75rem 1.5rem; }
       .project-body { padding: 0 1.5rem 2rem; }
@@ -639,10 +628,10 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="divider" style="padding: 0; margin-bottom: 4rem;">
-      <div class="divider-line"></div>
-      <span class="divider-text">About</span>
-      <div class="divider-line"></div>
+    <div class="divider" style="display:flex;align-items:center;gap:1.5rem;margin-bottom:4rem;">
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;">About</span>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
     </div>
 
     <p class="section-label reveal">Who I am</p>
@@ -651,13 +640,13 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <p>
-          I'm Brett — based in Calgary, and I build <strong>AI-powered automations and tools</strong> that solve real problems. Not concepts. Not mockups. Things that are actually live and working.
+          I'm Brett — based in Edmonton, and I build <strong>AI-powered automations and tools</strong> that solve real problems. Not concepts. Not mockups. Things that are actually live and working.
         </p>
         <p>
           Every project on this site comes with a <strong>live demo you can watch</strong> — because talk is cheap and working code isn't.
         </p>
         <p>
-          Whether it's a phone agent that books customers at 2am, or an automation that handles repetitive tasks at scale, I build it, film it, and show you exactly how it works.
+          Whether it's a voice agent that books customers at 2am, a bot that handles repetitive enterprise tasks at scale, or a full end-to-end pipeline with SMS follow-up — I build it, film it, and show you exactly how it works.
         </p>
       </div>
       <div class="about-stats reveal">
@@ -683,10 +672,10 @@
 
   <!-- WORK -->
   <section id="work">
-    <div class="divider" style="padding: 0; margin-bottom: 4rem;">
-      <div class="divider-line"></div>
-      <span class="divider-text">Work</span>
-      <div class="divider-line"></div>
+    <div class="divider" style="display:flex;align-items:center;gap:1.5rem;margin-bottom:4rem;">
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;">Work</span>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
     </div>
 
     <p class="section-label reveal">Projects</p>
@@ -694,36 +683,36 @@
 
     <div style="margin-top: 4rem;">
 
-      <!-- PROJECT 01 -->
+      <!-- PROJECT 01 — GARDENCRAFT FULL PIPELINE -->
       <div class="project-card reveal">
         <div class="project-header">
           <div>
             <div class="project-meta">
               <span class="project-num">01</span>
-              <span class="project-tag">AI Phone Agent</span>
+              <span class="project-tag">Full Automation Pipeline</span>
               <span class="project-live-badge">
                 <span class="live-dot"></span>
                 Live
               </span>
             </div>
-            <h3 class="project-title">Garden Craft — Cedar Box<br>Consultation Booking Agent</h3>
+            <h3 class="project-title">GardenCraft — End-to-End<br>Booking &amp; Follow-Up System</h3>
           </div>
           <span class="project-arrow">+</span>
         </div>
 
         <div class="project-body">
           <p class="project-description">
-            A fully autonomous AI phone agent built for a garden box business. Customers call in any time of day or night, the agent handles the conversation naturally, and books a consultation directly onto a live calendar — no human involved. Watch it happen in real time below.
+            A fully autonomous booking and follow-up pipeline built for a garden box business. A customer fills out a form on the website — within seconds, a <strong>VAPI outbound voice AI agent</strong> calls them back, confirms their delivery details, locks in a time, and books it straight into Google Calendar. From there, <strong>n8n workflows</strong> fire automatically: a Twilio SMS confirmation goes out immediately, and a reminder SMS goes out the morning before their delivery. One Make scenario. Three n8n workflows. Zero human involvement from form submission to day-before reminder.
           </p>
 
           <div class="video-wrapper">
-            <video controls preload="metadata" poster="">
-              <source src="GardenCraft_Cedarbox_Consultation_Booking_with_Brett.mp4" type="video/mp4">
+            <video controls preload="metadata">
+              <source src="gardencraft_pipeline_video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <div class="video-caption">
               <span class="video-caption-text">
-                <strong>Live demo</strong> &nbsp;·&nbsp; Real call, real calendar booking
+                <strong>Live demo</strong> &nbsp;·&nbsp; Real call, real calendar booking, real SMS
               </span>
               <a href="/cedarcraft.html" target="_blank" class="visit-link">
                 Visit live site
@@ -733,25 +722,107 @@
           </div>
 
           <div class="project-tech">
-            <span class="tech-pill">AI Voice Agent</span>
-            <span class="tech-pill">Calendar Integration</span>
-            <span class="tech-pill">24/7 Booking</span>
-            <span class="tech-pill">Custom Domain</span>
+            <span class="tech-pill">VAPI Voice AI</span>
+            <span class="tech-pill">Make.com</span>
+            <span class="tech-pill">n8n</span>
+            <span class="tech-pill">Google Calendar</span>
+            <span class="tech-pill">Twilio SMS</span>
+            <span class="tech-pill">Webhook Routing</span>
+            <span class="tech-pill">Outbound Agent</span>
           </div>
         </div>
       </div>
 
-      <!-- MORE COMING -->
-      <div class="project-card reveal" style="opacity: 0.4; pointer-events: none;">
+      <!-- PROJECT 02 — ORACLE BOT -->
+      <div class="project-card reveal">
         <div class="project-header">
           <div>
             <div class="project-meta">
               <span class="project-num">02</span>
-              <span class="project-tag">Coming Soon</span>
+              <span class="project-tag">Enterprise Automation</span>
+              <span class="project-live-badge" style="color:#C9A96E;border-color:rgba(201,169,110,0.3);">
+                <span class="live-dot" style="background:#C9A96E;"></span>
+                Working
+              </span>
             </div>
-            <h3 class="project-title">Next project<br><em>in progress...</em></h3>
+            <h3 class="project-title">Oracle HCM — Automated<br>Job Application Bot</h3>
           </div>
           <span class="project-arrow">+</span>
+        </div>
+
+        <div class="project-body">
+          <p class="project-description">
+            A Python and Selenium bot that navigates Oracle HCM's notoriously complex multi-page job application forms — including <strong>shadow DOM traversal, OTP email verification, resume upload, diversity forms, and e-signature</strong>. The code is self-healing, recovering automatically from Oracle's unpredictable UI re-renders. Built with human-in-the-loop checkpoints at email confirmation and final submit, so you stay in control without doing any of the manual work. Tracks applied jobs to prevent duplicates across sessions.
+          </p>
+
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="oracle_job_application_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-caption">
+              <span class="video-caption-text">
+                <strong>Screen recording</strong> &nbsp;·&nbsp; No audio — watch the bot navigate Oracle's forms in real time
+              </span>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Selenium</span>
+            <span class="tech-pill">Shadow DOM</span>
+            <span class="tech-pill">OTP Handling</span>
+            <span class="tech-pill">Self-Healing Code</span>
+            <span class="tech-pill">Human-in-the-Loop</span>
+            <span class="tech-pill">Oracle HCM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 03 — INBOUND AGENT -->
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div>
+            <div class="project-meta">
+              <span class="project-num">03</span>
+              <span class="project-tag">AI Phone Agent</span>
+              <span class="project-live-badge">
+                <span class="live-dot"></span>
+                Live
+              </span>
+            </div>
+            <h3 class="project-title">GardenCraft — Inbound<br>Voice Booking Agent</h3>
+          </div>
+          <span class="project-arrow">+</span>
+        </div>
+
+        <div class="project-body">
+          <p class="project-description">
+            A VAPI inbound voice AI agent that answers calls to the GardenCraft phone number 24/7. The agent collects everything from scratch — name, delivery address, box size, preferred date and time, and any access notes — then books the appointment directly into Google Calendar and ends the call on its own. No form. No human. No missed calls.
+          </p>
+
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="GardenCraft_Cedarbox_Consultation_Booking_with_Brett.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-caption">
+              <span class="video-caption-text">
+                <strong>Live demo</strong> &nbsp;·&nbsp; Real inbound call, real calendar booking
+              </span>
+              <a href="/cedarcraft.html" target="_blank" class="visit-link">
+                Try the agent
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <span class="tech-pill">VAPI Voice AI</span>
+            <span class="tech-pill">Google Calendar</span>
+            <span class="tech-pill">Inbound Agent</span>
+            <span class="tech-pill">24/7 Availability</span>
+          </div>
         </div>
       </div>
 
@@ -760,10 +831,10 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="divider" style="padding: 0; margin-bottom: 4rem;">
-      <div class="divider-line"></div>
-      <span class="divider-text">Contact</span>
-      <div class="divider-line"></div>
+    <div class="divider" style="display:flex;align-items:center;gap:1.5rem;margin-bottom:4rem;">
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;">Contact</span>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
     </div>
 
     <div class="contact-inner">
@@ -771,7 +842,7 @@
       <h2 class="section-title reveal">Have a project<br>in <em>mind?</em></h2>
 
       <p class="contact-intro reveal">
-        If you want something built — an automation, an AI agent, a tool that saves you time — reach out. I'll show you what's possible.
+        If you want something built — an automation, an AI agent, a tool that saves you time and runs while you sleep — reach out. I'll show you what's possible.
       </p>
 
       <div class="contact-links reveal">
@@ -779,6 +850,13 @@
           <div>
             <div class="contact-item-label">Email</div>
             <div class="contact-item-value">brett@irwin-solutions.com</div>
+          </div>
+          <svg class="contact-item-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://www.upwork.com" target="_blank" class="contact-item">
+          <div>
+            <div class="contact-item-label">Upwork</div>
+            <div class="contact-item-value">Hire me on Upwork</div>
           </div>
           <svg class="contact-item-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
