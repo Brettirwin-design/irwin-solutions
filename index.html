@@ -231,6 +231,51 @@
 
     .section-title em { font-style: italic; color: var(--gold); }
 
+    /* ── SERVICES ── */
+    .services-intro {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text-muted);
+      max-width: 46rem;
+      margin-top: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 4rem;
+    }
+
+    .service-box {
+      background: var(--bg);
+      padding: 2.5rem 2rem;
+      scroll-margin-top: 6rem;
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .service-desc {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── ABOUT ── */
     .about-grid {
       display: grid;
@@ -394,6 +439,13 @@
       background: #000;
       border: 1px solid var(--border);
       overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
     }
 
     .video-wrapper video {
@@ -586,8 +638,9 @@
   <nav>
     <a href="#" class="nav-logo">Irwin Solutions</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -598,25 +651,25 @@
     <div class="hero-bg-line"></div>
     <div class="hero-bg-line"></div>
 
-    <p class="hero-eyebrow">Brett Irwin &nbsp;/&nbsp; Automation &amp; AI</p>
+    <p class="hero-eyebrow">Irwin Solutions &nbsp;/&nbsp; Edmonton, Alberta</p>
 
     <h1 class="hero-title">
-      I build things<br>
-      that <em>work</em><br>
-      while you sleep.
+      The calls you miss<br>
+      are the jobs<br>
+      you <em>lose</em>.
     </h1>
 
     <p class="hero-sub">
-      Real automations. Live demos. No fluff — just working systems you can see in action right here.
+      I'm Brett — HVAC, glazing, flooring, oil &amp; gas supervision. Now I build the phone answering, instant text-back, and booking systems that catch the work you're currently dropping. Every system below has a live demo you can watch.
     </p>
 
     <div class="hero-cta">
-      <a href="#work" class="btn-primary">
-        See the work
+      <a href="https://cal.com/irwin-solutions/15min" target="_blank" rel="noopener" class="btn-primary">
+        Book a 15-minute call
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#contact" class="btn-ghost">
-        Get in touch
+      <a href="#services" class="btn-ghost">
+        See what I do
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -624,6 +677,54 @@
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       <span class="scroll-text">Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="divider" style="display:flex;align-items:center;gap:1.5rem;margin-bottom:4rem;">
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;">Services</span>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+    </div>
+
+    <p class="section-label reveal">What I do</p>
+    <h2 class="section-title reveal">Work you're already<br>losing, <em>caught.</em></h2>
+
+    <p class="services-intro reveal">
+      For contractors, home service, and field service businesses — anyone whose money walks out the door when the phone goes unanswered. You keep doing the work. The systems below handle everything around it.
+    </p>
+
+    <div class="services-grid reveal">
+      <div class="service-box">
+        <div class="service-name">Never miss another call</div>
+        <p class="service-desc">An AI agent answers 24/7 in a real voice, takes the details, and books the job — nights, weekends, and while you're under a sink.</p>
+      </div>
+
+      <div class="service-box" id="missed-calls">
+        <div class="service-name">Text back in 30 seconds</div>
+        <p class="service-desc">Miss a call and an SMS goes out instantly. Most people call the next name on the list within two minutes — this is what stops that.</p>
+      </div>
+
+      <div class="service-box" id="booking">
+        <div class="service-name">Booking that runs itself</div>
+        <p class="service-desc">Jobs land straight in your calendar. Confirmations and day-before reminders go out on their own. No back-and-forth, no no-shows.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-name">Quotes and follow-up</div>
+        <p class="service-desc">Estimates drafted from your own numbers, and the quotes that went quiet chased automatically instead of dying in your inbox.</p>
+      </div>
+
+      <div class="service-box" id="paperwork">
+        <div class="service-name">Paperwork off your desk</div>
+        <p class="service-desc">Supplier invoices, receipts, and forms read, entered, and filed automatically — including the ones you photograph in the truck.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-name">Getting paid, and reviewed</div>
+        <p class="service-desc">Invoices out the same day, payments chased politely without you doing it, and a review request to every happy customer.</p>
+      </div>
     </div>
   </section>
 
@@ -731,48 +832,43 @@
         </div>
       </div>
 
-      <!-- PROJECT 02 — ORACLE BOT -->
+      <!-- PROJECT 02 — MISSED-CALL SMS TEXT-BACK -->
       <div class="project-card reveal">
         <div class="project-header">
           <div>
             <div class="project-meta">
               <span class="project-num">02</span>
-              <span class="project-tag">Enterprise Automation</span>
-              <span class="project-live-badge" style="color:#C9A96E;border-color:rgba(201,169,110,0.3);">
-                <span class="live-dot" style="background:#C9A96E;"></span>
-                Working
+              <span class="project-tag">Missed-Call Text-Back</span>
+              <span class="project-live-badge">
+                <span class="live-dot"></span>
+                Live
               </span>
             </div>
-            <h3 class="project-title">Oracle HCM — Automated<br>Job Application Bot</h3>
+            <h3 class="project-title">Instant SMS Text-Back<br>on Every Missed Call</h3>
           </div>
           <span class="project-arrow">+</span>
         </div>
 
         <div class="project-body">
           <p class="project-description">
-            A Python and Selenium bot that navigates Oracle HCM's notoriously complex multi-page job application forms — including <strong>shadow DOM traversal, OTP email verification, resume upload, diversity forms, and e-signature</strong>. The code is self-healing, recovering automatically from Oracle's unpredictable UI re-renders. Built with human-in-the-loop checkpoints at email confirmation and final submit, so you stay in control without doing any of the manual work. Tracks applied jobs to prevent duplicates across sessions.
+            The call comes in while you're on a roof, under a sink, or driving. You can't answer it. <strong>Within seconds the caller gets a text back in your name</strong> — apologising for the miss, asking what they need, and keeping the conversation alive until you can pick it up. No voicemail nobody checks. No lead calling the next name on their list because you took four hours to ring back. This is the cheapest system on this page and usually the one that pays for itself first.
           </p>
 
           <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="oracle_job_application_video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <iframe src="https://www.youtube.com/embed/0FK4fei1arY" title="Missed-call SMS text-back demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video-caption">
               <span class="video-caption-text">
-                <strong>Screen recording</strong> &nbsp;·&nbsp; No audio — watch the bot navigate Oracle's forms in real time
+                <strong>Live demo</strong> &nbsp;·&nbsp; Real missed call, real text back, timed on the clock
               </span>
             </div>
           </div>
 
           <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Selenium</span>
-            <span class="tech-pill">Shadow DOM</span>
-            <span class="tech-pill">OTP Handling</span>
-            <span class="tech-pill">Self-Healing Code</span>
-            <span class="tech-pill">Human-in-the-Loop</span>
-            <span class="tech-pill">Oracle HCM</span>
+            <span class="tech-pill">Twilio SMS</span>
+            <span class="tech-pill">Call Forwarding</span>
+            <span class="tech-pill">Make.com</span>
+            <span class="tech-pill">Two-Way Texting</span>
+            <span class="tech-pill">Works With Your Number</span>
           </div>
         </div>
       </div>
@@ -879,10 +975,17 @@
       <h2 class="section-title reveal">Have a project<br>in <em>mind?</em></h2>
 
       <p class="contact-intro reveal">
-        If you want something built — an automation, an AI agent, a tool that saves you time and runs while you sleep — reach out. I'll show you what's possible.
+        Fifteen minutes, no pitch deck. Tell me where the work is leaking and I'll tell you straight whether I can fix it — and roughly what it costs. Pick a time that suits you, or just call.
       </p>
 
       <div class="contact-links reveal">
+        <a href="https://cal.com/irwin-solutions/15min" target="_blank" rel="noopener" class="contact-item">
+          <div>
+            <div class="contact-item-label">Book a call</div>
+            <div class="contact-item-value">Grab 15 minutes on my calendar</div>
+          </div>
+          <svg class="contact-item-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
         <a href="mailto:brettirwin@irwin-solutions.com" class="contact-item">
           <div>
             <div class="contact-item-label">Email</div>
@@ -904,13 +1007,6 @@
           </div>
           <svg class="contact-item-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="https://irwin-solutions.com" target="_blank" class="contact-item">
-          <div>
-            <div class="contact-item-label">Website</div>
-            <div class="contact-item-value">irwin-solutions.com</div>
-          </div>
-          <svg class="contact-item-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
       </div>
     </div>
   </section>
@@ -918,7 +1014,11 @@
   <!-- FOOTER -->
   <footer>
     <span class="footer-logo">Irwin Solutions</span>
-    <span class="footer-copy">© 2025 Brett Irwin. All rights reserved.</span>
+    <span class="footer-copy">
+      4519 20A Ave NW, Edmonton, AB &nbsp;·&nbsp; (780) 243-0454 &nbsp;·&nbsp;
+      <a href="privacy.html" style="color:var(--gold-dim);text-decoration:none;border-bottom:1px solid var(--border);">Privacy &amp; unsubscribe</a>
+      <br>© 2026 Brett Irwin. All rights reserved.
+    </span>
   </footer>
 
   <script>
